@@ -20,8 +20,8 @@ use LWP::UserAgent;
 
 # Use the DBI module to access the web site
 my $drh = DBI->install_driver("mysql");
-my $dsn = "DBI:mysql:database=asciiart;host=asciiart.db.4820866.hostedresource.com";
-my $dbh = DBI->connect($dsn, 'asciiart', 'b2A33r#!', { RaiseError => 1, AutoCommit => 0 });
+my $dsn = "DBI:mysql:database=####;host=####";
+my $dbh = DBI->connect($dsn, '####', '####', { RaiseError => 1, AutoCommit => 0 });
 
 # Use the CGI module to access query parameters
 $query = CGI->new;
@@ -43,7 +43,7 @@ if ($query->param('submit')) {
 	my $result = $ua->post(
 		'http://www.google.com/recaptcha/api/verify',
 		{
-			privatekey => '6LeiTukSAAAAAFzI2MSyO2K6VPA1_RKLFMvORt8S',
+			privatekey => '####',
 			remoteip   => $ENV{'REMOTE_ADDR'},
 			challenge  => $query->param('recaptcha_challenge_field'),
 			response   => $query->param('recaptcha_response_field'),
